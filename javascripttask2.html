@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript Task 2</title>
+</head>
+<body>
+	<script type="text/javascript">
+	let data = [{principal : 2500, time : 1.8}, {principal : 1000, time : 5}, {principal : 3000, time: 1}, {principal : 2000, time : 3}];
+ 	function interestCalculator(arr){
+ 		let interestData = [];
+ 		for(let i of data){
+ 			let principal = i.principal;
+ 			let time = i.time;
+ 			let rate = 0;
+ 			let  interest = '';
+ 			let realInterest = {};
+ 			
+ 			if(principal>=2500 && 1<time<3){
+ 				 rate = 3;
+ 				 interest = (principal * rate * time) / 100; 
+ 				 realInterest ={principal : principal, rate: rate, time: time, interest : interest};
+ 				 interestData.push(realInterest);  
+ 			}
+ 			else if (principal>=2500 && time>=3){
+ 				 rate = 4;
+ 				 interest = (principal * rate * time) / 100; 
+ 				 realInterest = {principal : principal, rate: rate, time: time, interest : interest};
+ 				 interestData.push(realInterest); 
+	 		}
+			else if (principal<2500 || time<=1){
+				 rate = 2;
+				 interest = (principal * rate * time) / 100;
+				 realInterest = {principal : principal, rate: rate, time: time, interest : interest};
+ 				 interestData.push(realInterest);  
+			}
+			else{
+				 rate = 1;
+				 interest = (principal * rate * time) / 100;
+				 realInterest = {principal : principal, rate: rate, time: time, interest : interest};
+ 				 interestData.push(realInterest);  
+			}
+	 	
+	    }
+	   
+			console.log(interestData);
+     		return interestData;
+ 	}
+    interestCalculator(data);
+	</script>
+</body>
+</html>
